@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <title>Bokeh Plot</title>
+    <style>
+      html, body {
+        box-sizing: border-box;
+        display: flow-root;
+        height: 100%;
+        margin: 0;
+        padding: 0;
+      }
+    </style>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-3.4.3.min.js"></script>
+    <script type="text/javascript" src="https://cdn.bokeh.org/bokeh/release/bokeh-widgets-3.4.3.min.js"></script>
+    <script type="text/javascript">
+        Bokeh.set_log_level("info");
+    </script>
+  </head>
+  <body>
+    <div id="a7930d85-60e4-44a9-b478-fa4ad58888b7" data-root-id="p1138" style="display: contents;"></div>
+  
+    <script type="application/json" id="e9db33b5-8d4e-4b27-88a6-13296f3b4265">
+      {"455e2350-92e9-4b90-9085-a0326a1433b8":{"version":"3.4.3","title":"Bokeh Application","roots":[{"type":"object","name":"Column","id":"p1138","attributes":{"children":[{"type":"object","name":"Figure","id":"p1079","attributes":{"x_range":{"type":"object","name":"FactorRange","id":"p1089","attributes":{"factors":["veber_rule","reos_filter","lipinski_rule_of_5","egan_rule","ghose_filter","drug_like_filter","rule_of_three","fails_all","passes_all"]}},"y_range":{"type":"object","name":"DataRange1d","id":"p1081"},"x_scale":{"type":"object","name":"CategoricalScale","id":"p1090"},"y_scale":{"type":"object","name":"LinearScale","id":"p1091"},"title":{"type":"object","name":"Title","id":"p1082","attributes":{"text":"Drugs vs Toxins"}},"renderers":[{"type":"object","name":"GlyphRenderer","id":"p1119","attributes":{"data_source":{"type":"object","name":"ColumnDataSource","id":"p1076","attributes":{"selected":{"type":"object","name":"Selection","id":"p1077","attributes":{"indices":[],"line_indices":[]}},"selection_policy":{"type":"object","name":"UnionRenderers","id":"p1078"},"data":{"type":"map","entries":[["index",["veber_rule","reos_filter","lipinski_rule_of_5","egan_rule","ghose_filter","drug_like_filter","rule_of_three","fails_all","passes_all"]],["drugs",[81.3,51.55,44.3,42.35,41.25,35.75,14.0,13.45,0.45]],["toxins",[89.8,48.05,62.35,45.15,31.35,52.75,27.05,7.3,0.5]],["info",["Veber's rule is a set of guidelines that help predict how well a drug will be absorbed orally. It's based on a molecule's structure, and considers the number of rotatable bonds and its polar surface area. ","The REOS filter is a filter designed to filter out unuseful compounds from HTS screening results, and is described in Waters &amp; Namchuk, Nature Reviews Drug Discovery 2, 259-266 (2003).","Lipinski's rule of five is a computational procedure that predicts whether a chemical compound is likely to be orally active in humans. It's used in drug discovery to estimate a compound's solubility, membrane permeability, and pharmacological effectiveness.","The Egan rule is a set of guidelines that help predict how well a small molecule will be absorbed orally. It's based on a computational model called the Egan filter, which uses multivariate statistics to analyze data from well- and poorly-absorbed compounds. ","The Ghose filter is a knowledge-based filter that helps identify drug-like chemical spaces. It can be used to design libraries for medicinal chemistry and combinatorial chemistry. ","A drug-like filter is a tool that helps identify compounds with properties that make them more likely to be effective drugs. These filters are used in medicinal chemistry to help select compounds for further testing. ","Fails all the mentioned drug screening tests","The rule of three in drug discovery is a set of guidelines for the physicochemical properties of molecules. It's also used in clinical trials to estimate the likelihood of rare adverse events. ","Passes all the mentioned drug screening tests"]]]}}},"view":{"type":"object","name":"CDSView","id":"p1120","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1121"}}},"glyph":{"type":"object","name":"VBar","id":"p1116","attributes":{"x":{"type":"field","field":"index","transform":{"type":"object","name":"Dodge","id":"p1112","attributes":{"value":-0.15,"range":{"id":"p1089"}}}},"width":{"type":"value","value":0.3},"top":{"type":"field","field":"drugs"},"line_color":{"type":"value","value":"blue"},"fill_color":{"type":"value","value":"blue"},"hatch_color":{"type":"value","value":"blue"}}},"nonselection_glyph":{"type":"object","name":"VBar","id":"p1117","attributes":{"x":{"type":"field","field":"index","transform":{"id":"p1112"}},"width":{"type":"value","value":0.3},"top":{"type":"field","field":"drugs"},"line_color":{"type":"value","value":"blue"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"VBar","id":"p1118","attributes":{"x":{"type":"field","field":"index","transform":{"id":"p1112"}},"width":{"type":"value","value":0.3},"top":{"type":"field","field":"drugs"},"line_color":{"type":"value","value":"blue"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"blue"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"blue"},"hatch_alpha":{"type":"value","value":0.2}}}}},{"type":"object","name":"GlyphRenderer","id":"p1131","attributes":{"data_source":{"id":"p1076"},"view":{"type":"object","name":"CDSView","id":"p1132","attributes":{"filter":{"type":"object","name":"AllIndices","id":"p1133"}}},"glyph":{"type":"object","name":"VBar","id":"p1128","attributes":{"x":{"type":"field","field":"index","transform":{"type":"object","name":"Dodge","id":"p1124","attributes":{"value":0.15,"range":{"id":"p1089"}}}},"width":{"type":"value","value":0.3},"top":{"type":"field","field":"toxins"},"line_color":{"type":"value","value":"red"},"fill_color":{"type":"value","value":"red"},"hatch_color":{"type":"value","value":"red"}}},"nonselection_glyph":{"type":"object","name":"VBar","id":"p1129","attributes":{"x":{"type":"field","field":"index","transform":{"id":"p1124"}},"width":{"type":"value","value":0.3},"top":{"type":"field","field":"toxins"},"line_color":{"type":"value","value":"red"},"line_alpha":{"type":"value","value":0.1},"fill_color":{"type":"value","value":"red"},"fill_alpha":{"type":"value","value":0.1},"hatch_color":{"type":"value","value":"red"},"hatch_alpha":{"type":"value","value":0.1}}},"muted_glyph":{"type":"object","name":"VBar","id":"p1130","attributes":{"x":{"type":"field","field":"index","transform":{"id":"p1124"}},"width":{"type":"value","value":0.3},"top":{"type":"field","field":"toxins"},"line_color":{"type":"value","value":"red"},"line_alpha":{"type":"value","value":0.2},"fill_color":{"type":"value","value":"red"},"fill_alpha":{"type":"value","value":0.2},"hatch_color":{"type":"value","value":"red"},"hatch_alpha":{"type":"value","value":0.2}}}}}],"toolbar":{"type":"object","name":"Toolbar","id":"p1088","attributes":{"tools":[{"type":"object","name":"PanTool","id":"p1102"},{"type":"object","name":"WheelZoomTool","id":"p1103","attributes":{"renderers":"auto"}},{"type":"object","name":"BoxZoomTool","id":"p1104","attributes":{"overlay":{"type":"object","name":"BoxAnnotation","id":"p1105","attributes":{"syncable":false,"level":"overlay","visible":false,"left":{"type":"number","value":"nan"},"right":{"type":"number","value":"nan"},"top":{"type":"number","value":"nan"},"bottom":{"type":"number","value":"nan"},"left_units":"canvas","right_units":"canvas","top_units":"canvas","bottom_units":"canvas","line_color":"black","line_alpha":1.0,"line_width":2,"line_dash":[4,4],"fill_color":"lightgrey","fill_alpha":0.5}}}},{"type":"object","name":"ResetTool","id":"p1110"},{"type":"object","name":"TapTool","id":"p1111","attributes":{"renderers":"auto","callback":{"type":"object","name":"CustomJS","id":"p1137","attributes":{"args":{"type":"map","entries":[["source",{"id":"p1076"}],["info_box",{"type":"object","name":"Div","id":"p1136","attributes":{"width":400,"height":100,"text":"&lt;span style='font-size:16px;'&gt;&lt;b&gt;Click a bar to see more info&lt;/b&gt;&lt;/span&gt;"}}]]},"code":"\n        var selected = source.selected.indices;\n        if (selected.length &gt; 0) {\n            var index = selected[0];\n            var info = source.data['info'][index];\n            info_box.text = \"&lt;span style='font-size:16px;'&gt;&lt;b&gt;Info:&lt;/b&gt; \" + info + \"&lt;/span&gt;\";\n        }\n    "}}}},{"type":"object","name":"HoverTool","id":"p1135","attributes":{"renderers":"auto","tooltips":[["Category","@index"],["Drugs","@drugs %"],["Toxins","@toxins %"]]}}]}},"left":[{"type":"object","name":"LinearAxis","id":"p1097","attributes":{"ticker":{"type":"object","name":"BasicTicker","id":"p1098","attributes":{"mantissas":[1,2,5]}},"formatter":{"type":"object","name":"BasicTickFormatter","id":"p1099"},"axis_label":"Values","major_label_policy":{"type":"object","name":"AllLabels","id":"p1100"}}}],"below":[{"type":"object","name":"CategoricalAxis","id":"p1092","attributes":{"ticker":{"type":"object","name":"CategoricalTicker","id":"p1093"},"formatter":{"type":"object","name":"CategoricalTickFormatter","id":"p1094"},"axis_label":"Categories","major_label_policy":{"type":"object","name":"AllLabels","id":"p1095"}}}],"center":[{"type":"object","name":"Grid","id":"p1096","attributes":{"axis":{"id":"p1092"}}},{"type":"object","name":"Grid","id":"p1101","attributes":{"dimension":1,"axis":{"id":"p1097"}}},{"type":"object","name":"Legend","id":"p1122","attributes":{"items":[{"type":"object","name":"LegendItem","id":"p1123","attributes":{"label":{"type":"value","value":"Drugs"},"renderers":[{"id":"p1119"}]}},{"type":"object","name":"LegendItem","id":"p1134","attributes":{"label":{"type":"value","value":"Toxins"},"renderers":[{"id":"p1131"}]}}]}}]}},{"id":"p1136"}]}}]}}
+    </script>
+    <script type="text/javascript">
+      (function() {
+        const fn = function() {
+          Bokeh.safely(function() {
+            (function(root) {
+              function embed_document(root) {
+              const docs_json = document.getElementById('e9db33b5-8d4e-4b27-88a6-13296f3b4265').textContent;
+              const render_items = [{"docid":"455e2350-92e9-4b90-9085-a0326a1433b8","roots":{"p1138":"a7930d85-60e4-44a9-b478-fa4ad58888b7"},"root_ids":["p1138"]}];
+              root.Bokeh.embed.embed_items(docs_json, render_items);
+              }
+              if (root.Bokeh !== undefined) {
+                embed_document(root);
+              } else {
+                let attempts = 0;
+                const timer = setInterval(function(root) {
+                  if (root.Bokeh !== undefined) {
+                    clearInterval(timer);
+                    embed_document(root);
+                  } else {
+                    attempts++;
+                    if (attempts > 100) {
+                      clearInterval(timer);
+                      console.log("Bokeh: ERROR: Unable to run BokehJS code because BokehJS library is missing");
+                    }
+                  }
+                }, 10, root)
+              }
+            })(window);
+          });
+        };
+        if (document.readyState != "loading") fn();
+        else document.addEventListener("DOMContentLoaded", fn);
+      })();
+    </script>
+  </body>
+</html>

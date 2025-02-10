@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Text:ital@0;1&family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <title>Are Drugs and Toxins More Similar Than We Think?</title>
+    <style>
+        .dm-serif-text-regular {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        .dm-serif-text-regular-italic {
+            font-family: "DM Serif Text", serif;
+            font-weight: 400;
+            font-style: italic;
+        }
+
+        body {
+            font-family: "Roboto Condensed", serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+
+        .container {
+            max-width: 70%;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            font-family: "Bebas Neue", serif;
+            font-weight: 400;
+            font-style: normal;
+        }
+
+        h2 {
+            font-family: "DM Serif Text", serif;
+            font-weight: 300;
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .plot-container {
+            text-align: center;
+            margin: 20px 0;
+        }
+
+        .plot-container,
+        iframe {
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+
+        iframe {
+            display: block;
+            border-style: none;
+        }
+
+        .note {
+            font-size: 0.9em;
+            color: #888;
+            margin-top: -5px;
+        }
+
+        .class {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 100%;
+        }
+        
+        img {
+            max-width: 100%;
+            max-height: 40%;
+        }
+
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1><strong>When Drugs and Toxins Look Alike: Rethinking How We Screen Drug Molecules</strong></h1>
+        <img src="blog_files/molecules.jpg">
+        <p class="p3">&nbsp;</p>
+        <hr style="width: 50%;">
+        <p class="p2"><strong>By Rishav Sarkar</strong></p>
+        <p class="p3">&nbsp;</p>
+        <h2><strong>Introduction</strong></h2>
+        <p class="p5">One of humanity&rsquo;s greatest discoveries (or inventions in many cases) are medicinal drugs.
+            Molecules that saved our lives in countless ways ranging everywhere from fighting infections to treating
+            cancer. These tiny structures of atoms are the literal bricks and foundations upon which our current medical
+            infrastructure stands.</p>
+        <p class="p5">There is, therefore, a huge amount of research led into the field of medicinal drugs with
+            pharmaceutical companies employing various analytical methods such as drug screening filters and ADMET
+            properties to search for drug molecules and hopefully filtering out the molecules that might prove fatal.
+        </p>
+        <p class="p5">With an infinite number of such compounds, the question arises &ndash; how effective are these
+            methods? We usually assume that medicinal drugs and toxins are worlds apart. Differentiating between them is
+            an easy task, or is it?</p>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <h2><strong>What Are Drugs and Toxins?</strong></h2>
+        <p class="p5">Before diving into the details, let&rsquo;s break it down.</p>
+        <ul class="ul1">
+            <li class="li5"><strong>Drugs</strong> are molecules designed (or discovered) to treat diseases while
+                minimizing harmful side effects</li>
+            <li class="li5"><strong>Toxins</strong> are molecules that can cause harm to living organisms, whether
+                naturally occurring (like venom) or synthetic (like pesticides).</li>
+        </ul>
+        <p class="p5">At first glance, these two categories seem worlds apart. But chemically speaking, they often have
+            striking similarities. Let&rsquo;s look at an example.</p>
+        <p class="p5">From a randomised dataset containing both drugs and toxic molecules, I generated images of each
+            cluster of molecules, the clusters being generated based on their similarity index. Here is one of them:</p>
+        <p class="p5">&nbsp;</p>
+        <div class="plot-container">
+            <img src="blog_files/cluster14.png" class="center">
+            <p class="note">Figure [1] &ndash; Chemical structure of a drug and toxin molecule</p>
+        </div>
+        <p class="p5">A single fluorine atom is the difference between a treatment or harm. We can find very little
+            differences between them by looking at just the chemical structures.</p>
+        <p class="p5">These cluster images may not paint the full picture, so let&rsquo;s dive a little deeper into the
+            analysis.</p>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <h2><strong>Functional Groups: Defining Substructures of Drugs and Toxins</strong></h2>
+        <p class="p5">Before jumping into the data, let&rsquo;s see the definition of what a functional group is (as
+            given in Wikipedia) &ndash;</p>
+        <p class="p7">&ldquo;<em>In organic chemistry, a functional group is a substituent or moiety in a molecule that
+                causes the molecule's characteristic chemical reactions. The same functional group will undergo the same
+                or similar chemical reactions regardless of the rest of the molecule's composition.</em>&rdquo;</p>
+        <p class="p8">In other words, similar functional groups cause similar chemical reactions.</p>
+        <p class="p8">For analysis, I used the DrugBank dataset of approved drugs and Tox21 dataset of toxic molecules.
+            I measured the frequencies of several functional groups present in both and plotted them (Figure [2]). The
+            results were surprising &ndash; they had very little statistical difference.</p>
+        <hr>
+        <div class="plot-container">
+            <h3>Functional Group Frequencies in Drugs vs. Toxins</h3>
+            <iframe src="blog_files/Functional_Groups_Plot.html" frameborder="0" width="800px" height="600px"
+                display="block"></iframe>
+        </div>
+        <hr>
+        <p class="p5"><strong>Key Findings:</strong></p>
+        <ol class="ol1">
+            <li class="li5"><strong>Drugs and toxins share many of the same functional groups.</strong> Functional
+                groups are specific arrangements of atoms that determine a molecule&rsquo;s behavior. Bar plots
+                comparing functional group frequencies showed that both drugs and toxins commonly contain groups like
+                hydroxyl (-OH), amine (-NH2), and carbonyl (C=O), making them chemically alike.</li>
+                <li class="li5"><strong>Substructure matching cannot be used for differentiating between drugs and toxins.</strong> 
+                    The difference in frequency of various substructures between drugs and toxin molecules is nearly statistically insignificant
+                    and therefore, we must look for a better method of differentiation between the two.
+                </li>
+        </ol>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <h2><strong>Chemical Space Networks: A Complex Web of Similarities</strong></h2>
+        <p class="p5">Researchers in the field of chemistry and molecular biology often employ the use of Chemical Space
+            Networks to better understand the relationship between a group of molecules. In the networks, the molecules
+            are the nodes and the similarity index between them are the connections in between.</p>
+        <p class="p5">In the following graph, I used a randomised set of 500 drug and toxin molecules. The edges were
+            formed based on the Tanimoto similarity index between each pair of molecules. The result is quiet shocking
+            albeit beautiful to look at.</p>
+        <hr>
+        <div class="plot-container">
+            <h3> Chemical Space Networks</h3>
+            <iframe src="blog_files/network_subgraph.html" frameborder="0" width="750px" height="750px" display="block"></iframe>
+        </div>
+        <hr>
+        <p class="p5">In this plot, every edge has at last a weight of 0.68 Tanimoto similarity index. In simpler terms
+            each pair of molecules connected in this graph are at least 68% similar based on Tanimoto similarity index
+            calculations. The length of the edges is also determined by the same weight, therefore the closer a molecule
+            is to another one the more they are similar. The color and size of each node in this graph represents the
+            degree of the node, i.e., to how many other molecules a given molecule is similar to.</p>
+        <p class="p5">So, based on these findings, we can say that solely based on physical structures one cannot tell
+            whether a given molecule is a potential drug or a fatal toxin.</p>
+        <p class="p5">Let&rsquo;s have a look at the drug screening filters. These filters don&rsquo;t use structural
+            similarity indices as a criterion. Maybe, they can be the litmus test for these molecules?</p>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <h2><strong>Drug Screening: Do the Filters Work?</strong></h2>
+        <p class="p5">Pharmaceutical companies rely on a set of rules and properties to filter potential drug candidates
+            before investing in costly experiments. The most famous among these are:</p>
+        <ul class="ul1">
+            <li class="li5"><strong>Lipinski&rsquo;s Rule of 5</strong> &ndash; A set of guidelines predicting oral drug
+                absorption.</li>
+            <li class="li5"><strong>Rule of 3</strong> &ndash; Used for fragment-based drug discovery.</li>
+        </ul>
+        <p class="p5">In this analysis, I used the entirety of the drugs dataset (number of datapoints = 2172) and the
+            same size of datapoints sampled from the Tox21 dataset. After plotting the percentage of molecules passing
+            the drug screening filters the results look like this for the toxic molecules &ndash;</p>
+        <hr>
+        <div class="plot-container">
+            <h3>Percentage of Toxic and Drug Molecules Passing Drug Filters</h3>
+            <iframe src="blog_files/bar_plot.html" frameborder="0" width="750px" height="750px" display="block"
+                style="border-width: 1px; border-style: dashed;"></iframe>
+        </div>
+        <hr>
+        <p class="p5">It is striking how such a significant percentage of the toxic molecules sampled can pass through
+            so many of these filters. There is even a small percentage of them that pass through all of these filters.
+            For comparison here is the combined bar plot of percentage of drug and toxic molecules passing the drug
+            screening filters.</p>
+        <p class="p9">&nbsp;</p>
+        <p class="p5">These findings highlight two important facts:</p>
+        <ul class="ul1">
+            <li class="li5"><strong>A high percentage of toxic molecules passed drug screening tests.</strong> Many
+                toxins met the same criteria as approved drugs, suggesting these rules fail to weed out potentially
+                harmful molecules.</li>
+            <li class="li5"><strong>These filters are not sufficient.</strong> The fact that toxins pass these standard
+                drug-like property filters highlights a major flaw in traditional drug screening. While these rules may
+                help identify molecules with favourable absorption and bioavailability, they do not effectively
+                eliminate toxic compounds. This means that many toxic molecules could enter further stages of drug
+                development without being flagged as harmful.</li>
+        </ul>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <h2><strong>ADMET Property Distributions: Is this molecule probably a medicine?</strong></h2>
+        <p class="p5">Going further down the rabbit hole, I explored the ADMET properties of the molecules.</p>
+        <p class="p5">But what are ADMET properties exactly? &ndash; ADMET (Absorption, Distribution, Metabolism,
+            Excretion, Toxicity) properties are&nbsp;a set of pharmacokinetic properties that describe how a drug is
+            absorbed, distributed, metabolized, excreted in the human body and their toxicity.&nbsp;These properties are
+            important in drug discovery and chemical safety assessment and are widely used by researchers and
+            pharmaceutical companies alike.&nbsp;</p>
+        <p class="p5">To further analyze the pharmacokinetic differences (or lack thereof) between drugs and toxins, I
+            plotted Kernel Density Estimation (KDE), a.k.a, probability distributions for several ADMET properties such
+            as:</p>
+        <ul class="ul1">
+            <li class="li5"><strong>MIC (Minimum Inhibitory Concentration):</strong> Measures how effective a compound
+                is in inhibiting bacterial growth. KDE plots showed overlapping distributions, indicating that some
+                toxins exhibit antibacterial activity similar to drugs.</li>
+            <li class="li5"><strong>EC50 (Half Maximal Effective Concentration):</strong> Determines the concentration
+                at which a drug achieves 50% of its maximum effect. The similarity in KDE plots suggests that toxins can
+                have biological activity at comparable concentrations.</li>
+            <li class="li5"><strong>Potency:</strong> The strength of a drug&rsquo;s effect. Some toxins exhibit high
+                potency, making them indistinguishable from drugs based on this measure alone.</li>
+            <li class="li5"><strong>Ki and Kd (Binding Affinities):</strong> Measure how strongly a molecule binds to
+                its target. The overlapping distributions indicate that both drugs and toxins can exhibit strong binding
+                interactions.</li>
+            <li class="li5"><strong>Activity:</strong> A general measure of how biologically active a compound is. The
+                KDE analysis further confirms that toxins and drugs share similar activity ranges.</li>
+            <li class="li5"><strong>Solubility:</strong> A key factor in drug absorption. The KDE plots showed that many
+                toxins have solubility profiles similar to drugs, making it harder to distinguish them using this
+                criterion.</li>
+            <li class="li5"><strong>CL (Clearance Rate):</strong> Determines how quickly a compound is removed from the
+                body. The similarity in distributions suggests that some toxins may persist in the body for durations
+                comparable to drugs.</li>
+        </ul>
+        <p class="p5">On a side note &ndash; while working through the ChEMBL database, trying to fetch ADMET properties
+            of the molecules, many of them turned out to have missing data and as a result drastically decreased the
+            number of datapoints to work with for these plots.</p>
+        <p class="p5">Below are the KDE plots for the various ADMET properties &ndash;</p>
+        <p class="p9">&nbsp;</p>
+        <div class="plot-container">
+            <h3>Interactive ADMET Comparison</h3>
+            <iframe src="blog_files/kde_dropdown.html" frameborder="0" width="750px" height="750px" display="block"></iframe>
+        </div>
+        <p class="p5">These massive overlaps in probability distributions highlight an important fact &ndash; Even ADMET
+            properties do not have any statistical significance in determining the difference between a potential drug
+            and a toxic molecule.</p>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <p class="p4"><strong>What Does This Mean for Drug Discovery?</strong></p>
+        <p class="p5">These findings highlight a fundamental flaw in drug screening: <strong>traditional filters cannot
+                reliably differentiate between a medicine and a toxin.</strong> This means that relying solely on
+            computational rules could lead to ineffective or even dangerous drug candidates moving forward in the
+            development process.</p>
+            <p class="p5">So, what&rsquo;s the solution?</p>
+            <ol class="ol1">
+                <li class="li5"><strong>Experimental validation remains essential.</strong> No matter how advanced computational screening becomes, laboratory testing on living systems is still the gold standard for determining a molecule&rsquo;s safety and efficacy.</li>
+                <li class="li5"><strong>AI and machine learning offer new hope.</strong> Cutting-edge AI models trained on large datasets can detect patterns that traditional methods miss, offering a more refined approach to screening.</li>
+                <li class="li5"><strong>More rigorous screening methods are needed.</strong> Drug discovery should incorporate advanced toxicity predictions that go beyond simple structural rules.</li>
+            </ol>
+        <hr style="height:3px;border-width:0;color:gray;background-color:gray">
+        <h2><strong>Conclusion</strong></h2>
+        <p class="p5">Drugs and toxins aren&rsquo;t as different as we might think. Despite their opposing roles, they often share similar structures, functional groups, and even pass the same screening filters. This suggests that traditional pharmaceutical screening methods need to evolve.</p>
+        <p class="p5">The inability of traditional filters to reliably differentiate between drugs and toxins highlights the need for a paradigm shift in pharmaceutical screening. While these methods have guided drug discovery for decades, their limitations are becoming increasingly apparent. If potentially toxic compounds are making it through early screening, it raises concerns about the efficiency and safety of our current drug development pipeline.</p>
+        <p class="p5">A combination of advanced computational techniques, rigorous laboratory testing, and AI-driven predictive models can help bridge this gap. As we continue to refine these approaches, the future of drug discovery will depend on integrating smarter, more adaptive screening methods that can reliably separate beneficial medicines from harmful compounds.</p>
+    </div>
+
+</body>
+
+</html>
